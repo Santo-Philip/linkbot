@@ -1,0 +1,5 @@
+build:
+  docker:
+    web: Dockerfile
+run:
+  python3 -m Adarsh

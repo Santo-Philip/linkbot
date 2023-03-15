@@ -1,0 +1,11 @@
+version: "3.8"
+
+services:
+  tgbot:
+      build: .
+      restart: unless-stopped
+      container_name: tgbot
+      ports:
+       - 127.0.0.1:8000:8000
+      volumes:
+       - $HOME/FileStreamBot-pro:/app/.env
