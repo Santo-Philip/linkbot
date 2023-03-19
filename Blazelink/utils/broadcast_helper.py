@@ -1,4 +1,4 @@
-# (c) adarsh-goel
+
 
 import asyncio
 import traceback

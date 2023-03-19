@@ -1,10 +1,10 @@
-from Adarsh.bot import StreamBot
+from Blazelink.bot import StreamBot
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from pyrogram import filters
 import time
 import shutil, psutil
 from utils_bot import *
-from Adarsh import StartTime
+from Blazelink import StartTime
 
 
 START_TEXT = """ Your Telegram DC Is : `{}`  """
@@ -17,7 +17,7 @@ async def maintainers(b,m):
     except Exception:
                 await b.send_message(
                     chat_id=m.chat.id,
-                    text="I am Coded By [Adarsh Goel](https://github.com/adarsh-goel)",
+                    text="I am Coded By [Blazelink Goel](https://github.com/adarsh-goel)",
                     
                     reply_markup=InlineKeyboardMarkup(
                         [

@@ -1,36 +1,27 @@
 # (c) adarsh-goel 
-from Adarsh.bot import StreamBot
-from Adarsh.vars import Var
+from Blazelink.bot import StreamBot
+from Blazelink.vars import Var
 import logging
 logger = logging.getLogger(__name__)
-from Adarsh.bot.plugins.stream import MY_PASS
-from Adarsh.utils.human_readable import humanbytes
-from Adarsh.utils.database import Database
+from Blazelink.bot.plugins.stream import MY_PASS
+from Blazelink.utils.human_readable import humanbytes
+from Blazelink.utils.database import Database
 from pyrogram import filters
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from pyrogram.errors import UserNotParticipant
-from Adarsh.utils.file_properties import get_name, get_hash, get_media_file_size
+from Blazelink.utils.file_properties import get_name, get_hash, get_media_file_size
 db = Database(Var.DATABASE_URL, Var.name)
 from pyrogram.types import ReplyKeyboardMarkup
 
 if MY_PASS:
             buttonz=ReplyKeyboardMarkup(
             [
-                ["start⚡️","help📚","login🔑","DC"],
-                ["follow❤️","ping📡","status📊","maintainers😎"]
-                        
+                "login🔑"
             ],
             resize_keyboard=True
         )
 else:
-            buttonz=ReplyKeyboardMarkup(
-            [
-                ["start⚡️","help📚","DC"],
-                ["follow❤️","ping📡","status📊","maintainers😎"]
-                        
-            ],
-            resize_keyboard=True
-        )
+    None
 
             
             
@@ -70,8 +61,8 @@ async def start(b, m):
         except Exception:
             await b.send_message(
                 chat_id=m.chat.id,
-                text="<i>𝓢𝓸𝓶𝓮𝓽𝓱𝓲𝓷𝓰 𝔀𝓮𝓷𝓽 𝔀𝓻𝓸𝓷𝓰</i> <b> <a href='https://github.com/adarsh-goel'>CLICK HERE FOR SUPPORT </a></b>",
-                
+                text="<i>𝓢𝓸𝓶𝓮𝓽𝓱𝓲𝓷𝓰 𝔀𝓮𝓷𝓽 𝔀𝓻𝓸𝓷𝓰</i> <b> <a href='https://github.com/santo-philip'>CLICK HERE FOR SUPPORT </a></b>",
+
                 disable_web_page_preview=True)
             return
     await StreamBot.send_photo(
@@ -81,7 +72,7 @@ async def start(b, m):
         reply_markup=buttonz)
 
 
-@StreamBot.on_message((filters.command("help") | filters.regex('help📚')) & filters.private )
+@StreamBot.on_message((filters.command("help")) & filters.private )
 async def help_handler(bot, message):
     if not await db.is_user_exist(message.from_user.id):
         await db.add_user(message.from_user.id)
@@ -128,8 +119,8 @@ async def help_handler(bot, message):
         disable_web_page_preview=True,
         reply_markup=InlineKeyboardMarkup(
             [
-                [InlineKeyboardButton("💁‍♂️ DEV", url="https://github.com/adarsh-goel")],
-                [InlineKeyboardButton("💥 Source Code", url="https://github.com/adarsh-goel/-pro/")]
+                [InlineKeyboardButton("💁‍♂️ DEV", url="https://github.com/santo-philip")],
+                [InlineKeyboardButton("💥 Source Code", url="https://github.com/santo-philip/linkbot")]
             ]
         )
     )

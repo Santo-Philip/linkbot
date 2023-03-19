@@ -1,4 +1,4 @@
-#(c) Adarsh-Goel
+#(c) Blazelink-Goel
 import datetime
 import motor.motor_asyncio
 

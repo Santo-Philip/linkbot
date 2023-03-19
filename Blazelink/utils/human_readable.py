@@ -1,4 +1,4 @@
-# (c) adarsh-goel
+
 
 
 def humanbytes(size):
