@@ -45,7 +45,7 @@ async def login_handler(c: Client, m: Message):
     except Exception as e:
         print(e)
 
-@StreamBot.on_message((filters.private & filters.channel) & (filters.video | filters.audio | filters.document) , group=4)
+@StreamBot.on_message((filters.private) & (filters.video | filters.audio | filters.document) , group=4)
 async def private_receive_handler(c: Client, m: Message):
     if MY_PASS:
         check_pass = await pass_db.get_user_pass(m.chat.id)
