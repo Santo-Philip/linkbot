@@ -13,18 +13,7 @@ from Blazelink.utils.file_properties import get_name, get_hash, get_media_file_s
 db = Database(Var.DATABASE_URL, Var.name)
 from pyrogram.types import ReplyKeyboardMarkup
 
-if MY_PASS:
-            buttonz=ReplyKeyboardMarkup(
-            [
-                "login🔑"
-            ],
-            resize_keyboard=True
-        )
-else:
-    None
-
-            
-            
+       
 @StreamBot.on_message((filters.command("start") | filters.regex('start⚡️')) & filters.private )
 async def start(b, m):
     if not await db.is_user_exist(m.from_user.id):
