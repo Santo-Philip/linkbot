@@ -3,7 +3,6 @@ from Blazelink.bot import StreamBot
 from Blazelink.vars import Var
 import logging
 logger = logging.getLogger(__name__)
-from Blazelink.bot.plugins.stream import MY_PASS
 from Blazelink.utils.human_readable import humanbytes
 from Blazelink.utils.database import Database
 from pyrogram import filters
@@ -14,7 +13,7 @@ db = Database(Var.DATABASE_URL, Var.name)
 from pyrogram.types import ReplyKeyboardMarkup
 
        
-@StreamBot.on_message((filters.command("start") | filters.regex('start⚡️')) & filters.private )
+@StreamBot.on_message((filters.command("start")) & filters.private )
 async def start(b, m):
     if not await db.is_user_exist(m.from_user.id):
         await db.add_user(m.from_user.id)
@@ -108,8 +107,7 @@ async def help_handler(bot, message):
         disable_web_page_preview=True,
         reply_markup=InlineKeyboardMarkup(
             [
-                [InlineKeyboardButton("💁‍♂️ DEV", url="https://github.com/santo-philip")],
-                [InlineKeyboardButton("💥 Source Code", url="https://github.com/santo-philip/linkbot")]
+                [InlineKeyboardButton("💁‍♂️ DEV", url="https://github.com/santo-philip")]
             ]
         )
     )
