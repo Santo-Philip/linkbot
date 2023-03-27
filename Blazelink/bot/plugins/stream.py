@@ -73,7 +73,7 @@ async def private_receive_handler(c: Client, m: Message):
                 get_name(log_msg), humanbytes(get_media_file_size(m)), online_link, stream_link),
             disable_web_page_preview=True,
         )
-        await c.send_sticker(chat_id=Var.BIN_CHANNEL,sticker="CAACAgUAAxkBAALqj2QgAQIenNs-tgmAotZOzLd6b7qUAAJeAAOpmuYW-B1yGrfN828vBA")
+#        await c.send_sticker(chat_id=Var.BIN_CHANNEL,sticker="CAACAgUAAxkBAALqj2QgAQIenNs-tgmAotZOzLd6b7qUAAJeAAOpmuYW-B1yGrfN828vBA")
         await m.reply_text(
             text=msg_text.format(get_name(log_msg), humanbytes(get_media_file_size(m)), online_link, stream_link),
             quote=True,
@@ -134,7 +134,7 @@ async def group_receive_handler(c: Client, m: Message):
         log_msg = await m.forward(chat_id=Var.FILES_CHANNEL)
         stream_link = f"{Var.URL}watch/{str(log_msg.id)}/{quote_plus(get_name(log_msg))}?hash={get_hash(log_msg)}"
         online_link = f"{Var.URL}{str(log_msg.id)}/{quote_plus(get_name(log_msg))}?hash={get_hash(log_msg)}"
-        await c.send_sticker(chat_id=Var.FILES_CHANNEL,
+#        await c.send_sticker(chat_id=Var.FILES_CHANNEL,
                              sticker="CAACAgUAAxkBAALqi2QgAAH90AcInpSJ2SUtnjYETOB5kAACOgADqZrmFjr5YnFvFg0fLwQ")
 
         msg_text = """<i><u>𝗟𝗶𝗻𝗸 𝗚𝗲𝗻𝗲𝗿𝗮𝘁𝗲𝗱 !</u></i>\n\n<b>📂 Fɪʟᴇ ɴᴀᴍᴇ :</b> <i>{}</i>\n\n<b>📦 Fɪʟᴇ ꜱɪᴢᴇ :</b> <i>{}</i>\n\n<b>[📥 Dᴏᴡɴʟᴏᴀᴅ]({})  [🖥 WATCH]({}) </b>\n\n<b>🚸 Nᴏᴛᴇ : LINK WON'T EXPIRE TILL I DELETE</b>"""
@@ -145,7 +145,7 @@ async def group_receive_handler(c: Client, m: Message):
                 get_name(log_msg), humanbytes(get_media_file_size(m)), online_link, stream_link),
             disable_web_page_preview=True,
         )
-        await c.send_sticker(chat_id=Var.BIN_CHANNEL,sticker="CAACAgUAAxkBAALqj2QgAQIenNs-tgmAotZOzLd6b7qUAAJeAAOpmuYW-B1yGrfN828vBA")
+#        await c.send_sticker(chat_id=Var.BIN_CHANNEL,sticker="CAACAgUAAxkBAALqj2QgAQIenNs-tgmAotZOzLd6b7qUAAJeAAOpmuYW-B1yGrfN828vBA")
         await m.reply_text(
             text=msg_text.format(get_name(log_msg), humanbytes(get_media_file_size(m)), online_link, stream_link),
             quote=True,
@@ -169,7 +169,7 @@ async def channel_receive_handler(c: Client, m: Message):
         online_link = f"{Var.URL}{str(log_msg.id)}/{quote_plus(get_name(log_msg))}?hash={get_hash(log_msg)}"
         log_text = """<i><u>🔗 𝗟𝗶𝗻𝗸 𝗚𝗲𝗻𝗲𝗿𝗮𝘁𝗲𝗱 !</u></i>\n<b>💬 Channel : </b>{}\n<b>💡 Channel ID :</b>{}\n\n<b>📂 Fɪʟᴇ ɴᴀᴍᴇ :</b> <i>{}</i>\n\n<b>📦 Fɪʟᴇ ꜱɪᴢᴇ :</b> <i>{}</i>\n\n<b>📥 Dᴏᴡɴʟᴏᴀᴅ : {} </b> \n\n <b>🖥 WATCH : {} </b>"""
 
-        await c.send_sticker(chat_id=Var.FILES_CHANNEL,
+#        await c.send_sticker(chat_id=Var.FILES_CHANNEL,
                              sticker="CAACAgUAAxkBAALqi2QgAAH90AcInpSJ2SUtnjYETOB5kAACOgADqZrmFjr5YnFvFg0fLwQ")
 
         await c.send_message(
@@ -178,7 +178,7 @@ async def channel_receive_handler(c: Client, m: Message):
                 get_name(log_msg), humanbytes(get_media_file_size(m)), online_link, stream_link),
             disable_web_page_preview=True,
         )
-        await c.send_sticker(chat_id=Var.BIN_CHANNEL,
+#        await c.send_sticker(chat_id=Var.BIN_CHANNEL,
                              sticker="CAACAgUAAxkBAALqj2QgAQIenNs-tgmAotZOzLd6b7qUAAJeAAOpmuYW-B1yGrfN828vBA")
         await c.edit_message_reply_markup(chat_id=m.chat.id, message_id=m.id, reply_markup=InlineKeyboardMarkup(
             [[InlineKeyboardButton("STREAM 🖥", url=stream_link),
