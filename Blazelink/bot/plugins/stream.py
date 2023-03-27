@@ -62,8 +62,7 @@ async def private_receive_handler(c: Client, m: Message):
         log_msg = await m.forward(chat_id=Var.FILES_CHANNEL)
         stream_link = f"{Var.URL}watch/{str(log_msg.id)}/{quote_plus(get_name(log_msg))}?hash={get_hash(log_msg)}"
         online_link = f"{Var.URL}{str(log_msg.id)}/{quote_plus(get_name(log_msg))}?hash={get_hash(log_msg)}"
-        await c.send_sticker(chat_id=Var.FILES_CHANNEL,
-                             sticker="CAACAgUAAxkBAALqi2QgAAH90AcInpSJ2SUtnjYETOB5kAACOgADqZrmFjr5YnFvFg0fLwQ")
+#        await c.send_sticker(chat_id=Var.FILES_CHANNEL,sticker="CAACAgUAAxkBAALqi2QgAAH90AcInpSJ2SUtnjYETOB5kAACOgADqZrmFjr5YnFvFg0fLwQ")
 
         msg_text = """<i><u>𝗟𝗶𝗻𝗸 𝗚𝗲𝗻𝗲𝗿𝗮𝘁𝗲𝗱 !</u></i>\n\n<b>📂 Fɪʟᴇ ɴᴀᴍᴇ :</b> <i>{}</i>\n\n<b>📦 Fɪʟᴇ ꜱɪᴢᴇ :</b> <i>{}</i>\n\n<b>[📥 Dᴏᴡɴʟᴏᴀᴅ]({})  [🖥 WATCH]({}) </b>\n\n<b>🚸 Nᴏᴛᴇ : LINK WON'T EXPIRE TILL I DELETE</b>"""
         log_text = """<i><u>𝗟𝗶𝗻𝗸 𝗚𝗲𝗻𝗲𝗿𝗮𝘁𝗲𝗱 !</u></i>\n\n<b>📂 Fɪʟᴇ ɴᴀᴍᴇ :</b> <i>{}</i>\n\n<b>📦 Fɪʟᴇ ꜱɪᴢᴇ :</b> <i>{}</i>\n\n<b>📥 Dᴏᴡɴʟᴏᴀᴅ : {} </b> \n\n <b>🖥 WATCH : {} </b>"""
