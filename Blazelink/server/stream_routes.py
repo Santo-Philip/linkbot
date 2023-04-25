@@ -1,6 +1,3 @@
-# Taken from megadlbot_oss <https://github.com/eyaadh/megadlbot_oss/blob/master/mega/webserver/routes.py>
-# Thanks to Eyaadh <https://github.com/eyaadh>
-
 import re
 import time
 import math
@@ -19,6 +16,7 @@ from Blazelink.vars import Var
 
 
 routes = web.RouteTableDef()
+
 
 @routes.get("/", allow_head=True)
 async def root_route_handler(_):
