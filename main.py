@@ -12,7 +12,7 @@ from aiohttp import web
 from server import web_server
 
 string = 'BQAWgXwAhEWATO6TJoTDqNKrCA7sBoCRe0tz2grQjasFJYy9NCMr6oUUS1d6Lp2NSnWYbepgaN64Nfj2bTBFwgeXwkzRxsYDHpTIt9KTNbYAUZh5R3vm8cODMjFCh34c06qGd1L3tWJ6s_sDwqUmmh30iN-lw-hBFrYFHfn0r8hLKqBcYrFDSV-MqJA41934zF5opLXHwjoVr7gwHJ3HwQ8oeivT2LHPzhTfVHe9vGV_ypzLcfvElGMR5ZdYtQiQYxFhU2QliGTtRTOoL1Urx0PA8Mjckexl81q10euS413p4CU3ke_r_-uZtk1-Btept7xyqTegPfXbUEIC9EKwro6-A39ukwAAAABraHB9AQ'
-
+# token = '5804042113:AAHDHqINXxrofNXoaM6LwcZJP5CCoxxDnPE'
 
 logging.basicConfig(
     level=logging.INFO,
@@ -39,7 +39,7 @@ async def start_services():
     print(
         "---------------------- Initializing Clients ----------------------"
     )
-    await start_client(client='new',string=string)
+    # await start_client(client='shjas',string=token)
     print("------------------------------ DONE ------------------------------")
     print('\n')
     print('--------------------------- Importing ---------------------------')
