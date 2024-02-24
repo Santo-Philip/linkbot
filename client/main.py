@@ -5,7 +5,7 @@ import psutil
 
 api_id = 1474940
 api_hash = "779e8d2b32ef76d0b7a11fb5f132a6b6"
-token = '1802006653:AAHxGev-ojuQ3rIQyN1ENYH9aBRCcamOd7Q'
+token = '1802006653:AAE8Wo03glV_X51aMVUhM3W0outs5Q5sRXk'
 plg = dict(root='modules')
 string = 'BQAWgXwAMizhLTfPaid9DSVbusWDur-5UIWX9BO6pqEn-MAATcwYxFyqjU82QZQO_lwaaDjwbmik6QTIwwva_LJZ6KX0NfSz2XYxqNq1QecA9fHLHIGEHnJL8KLfbNWSDmo919grDCHlrdYjcSmJ15rDMEwCyLoq-V4jiYUF3Q8xLoPvCGF-DyxIrnLZWbELjxDUfv3sVBdzR9iN_A7UZ-opNFA87doMNo_pOkFv-ZFpXvO4icI79htJS-jY0Jz5CtP4fLysK9QDMN1X05lmSdjI72HrpIV9UwefVYoRSHb6sAbkwVKQCEaWeoSqJF56iOQA6L8t7itiKpTrRD7wV-cVruFUNQAAAABraHB9AQ'
 
@@ -15,7 +15,7 @@ StreamBot = Client(
     name='Web Streamer',
     api_id=api_id,
     api_hash=api_hash,
-    session_string=string,
+    bot_token=token,
     plugins=plg
 )
 

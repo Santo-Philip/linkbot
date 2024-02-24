@@ -11,6 +11,13 @@ from pyrogram.file_id import FileId, FileType, ThumbnailSource
 
 BIN_CHANNEL = -1001416821515
 
+async def chunk_size(length):
+    return 2 ** max(min(math.ceil(math.log2(length / 1024)), 10), 2) * 1024
+
+
+async def offset_fix(offset, chunksize):
+    offset -= offset % chunksize
+    return offset
 
 class ByteStreamer:
     def __init__(self, client: Client):
